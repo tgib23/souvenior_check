@@ -1,0 +1,27 @@
+<h1>Listing souveniors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Score</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @souveniors.each do |souvenior| %>
+      <tr>
+        <td><%= souvenior.score %></td>
+        <td><%= souvenior.comment %></td>
+        <td><%= link_to 'Show', souvenior %></td>
+        <td><%= link_to 'Edit', edit_souvenior_path(souvenior) %></td>
+        <td><%= link_to 'Destroy', souvenior, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Souvenior', new_souvenior_path %>

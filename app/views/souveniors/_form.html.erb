@@ -1,0 +1,66 @@
+<%= form_for(@souvenior) do |f| %>
+  <% if @souvenior.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@souvenior.errors.count, "error") %> prohibited this souvenior from being saved:</h2>
+
+      <ul>
+      <% @souvenior.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.radio_button :score, 0, :checked => true %>
+    <%= f.label :score, 'green tea kitkat' %>
+
+    <%= image_tag "kitkat.jpg", :size => "256x256" %>
+    <br>    <br>    <br>
+
+    <%= f.radio_button :score, 1, :checked => false %>
+    <%= f.label :score, 'black thunder' %>
+
+    <%= image_tag "blackthunder.jpeg", :size => "256x256" %>
+    <br>    <br>    <br>
+
+    <%= f.radio_button :score, 2, :checked => false %>
+    <%= f.label :score, 'caramel corn' %>
+
+    <%= image_tag "caramelcorn.jpg", :size => "256x256" %>
+    <br>    <br>    <br>
+
+    <%= f.radio_button :score, 3, :checked => false %>
+    <%= f.label :score, 'habanero' %>
+
+    <%= image_tag "habanero.jpg", :size => "256x256" %>
+    <br>    <br>    <br>
+
+    <%= f.radio_button :score, 4, :checked => false %>
+    <%= f.label :score, 'happy turn' %>
+
+    <%= image_tag "happyturn.jpg", :size => "256x256" %>
+    <br>    <br>    <br>
+
+    <%= f.radio_button :score, 5, :checked => false %>
+    <%= f.label :score, 'karamu-cho' %>
+
+    <%= image_tag "karamucho.jpg", :size => "256x256" %>
+    <br>    <br>    <br>
+
+    <%= f.radio_button :score, 6, :checked => false %>
+    <%= f.label :score, 'pocky' %>
+
+    <%= image_tag "pocky.jpeg", :size => "256x256" %>
+    <br>    <br>    <br>
+
+
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
